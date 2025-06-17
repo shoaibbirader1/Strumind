@@ -25,6 +25,7 @@ class ProjectCreate(BaseModel):
     description: Optional[str] = None
     location: Optional[str] = None
     project_type: str = "commercial"
+    client: Optional[str] = None
     design_code_concrete: str = "ACI_318"
     design_code_steel: str = "AISC_360"
     design_code_seismic: Optional[str] = None
@@ -72,16 +73,10 @@ async def create_project(
     db: Session = Depends(get_db)
 ):
     """Create new project"""
-    # Get user's organization - this is required
+    # Get user's organization - optional for demo
     organization_id = None
     if current_user.organization_memberships:
         organization_id = str(current_user.organization_memberships[0].organization_id)
-    
-    if not organization_id:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="User must belong to an organization to create projects"
-        )
     
     project = Project(
         id=str(uuid.uuid4()),
@@ -89,6 +84,7 @@ async def create_project(
         description=project_data.description,
         location=project_data.location,
         project_type=project_data.project_type,
+        client_name=project_data.client,
         design_code_concrete=project_data.design_code_concrete,
         design_code_steel=project_data.design_code_steel,
         design_code_seismic=project_data.design_code_seismic,

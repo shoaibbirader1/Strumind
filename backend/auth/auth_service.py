@@ -5,7 +5,7 @@ Main authentication service
 import bcrypt
 import jwt
 from datetime import datetime, timedelta
-from typing import Dict, Optional, Tuple
+from typing import Dict, Optional, Tuple, List
 import logging
 from sqlalchemy.orm import Session
 

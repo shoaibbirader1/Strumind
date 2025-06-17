@@ -40,8 +40,9 @@ class Settings(BaseSettings):
     ALLOWED_ORIGINS: List[str] = Field(
         default=[
             "http://localhost:3000", 
+            "http://localhost:12001",
             "https://app.strumind.com",
-            "https://work-2-tgaufxkwcjeifuoc.prod-runtime.all-hands.dev"
+            "https://work-2-ybyztwqptjnnqisy.prod-runtime.all-hands.dev"
         ],
         env="ALLOWED_ORIGINS"
     )
@@ -49,8 +50,9 @@ class Settings(BaseSettings):
         default=[
             "localhost", 
             "127.0.0.1", 
+            "0.0.0.0",
             "api.strumind.com",
-            "work-1-tgaufxkwcjeifuoc.prod-runtime.all-hands.dev"
+            "work-1-ybyztwqptjnnqisy.prod-runtime.all-hands.dev"
         ],
         env="ALLOWED_HOSTS"
     )
