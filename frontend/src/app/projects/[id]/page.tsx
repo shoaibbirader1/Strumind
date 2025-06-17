@@ -266,64 +266,210 @@ export default function ProjectDetailPage() {
               </TabsContent>
 
               <TabsContent value="modeling">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>3D Structural Model</CardTitle>
-                    <CardDescription>
-                      Create and edit your structural model with nodes, elements, and loads
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="h-96 bg-gray-100 rounded-lg flex items-center justify-center">
-                      <div className="text-center">
-                        <Building2 className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                        <h3 className="text-lg font-medium text-gray-900 mb-2">3D Model Viewer</h3>
-                        <p className="text-gray-600 mb-4">Start building your structural model</p>
-                        <Button>
-                          <Play className="w-4 h-4 mr-2" />
-                          Launch Model Editor
+                <div className="space-y-6">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>5-Story Building Model</CardTitle>
+                      <CardDescription>
+                        Interactive 3D structural model for your 5-story commercial building
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="h-96 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg flex items-center justify-center border-2 border-dashed border-blue-300">
+                        <div className="text-center">
+                          <Building2 className="w-16 h-16 text-blue-500 mx-auto mb-4" />
+                          <h3 className="text-lg font-medium text-gray-900 mb-2">3D Building Model</h3>
+                          <p className="text-gray-600 mb-4">5-story steel frame structure with concrete slabs</p>
+                          <div className="flex space-x-2 justify-center">
+                            <Button>
+                              <Play className="w-4 h-4 mr-2" />
+                              Launch 3D Editor
+                            </Button>
+                            <Button variant="outline">
+                              <Download className="w-4 h-4 mr-2" />
+                              Export Model
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <Card>
+                      <CardHeader>
+                        <CardTitle>Building Parameters</CardTitle>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <div>
+                          <label className="text-sm font-medium text-gray-500">Total Height</label>
+                          <p className="text-gray-900">20.0 meters</p>
+                        </div>
+                        <div>
+                          <label className="text-sm font-medium text-gray-500">Number of Stories</label>
+                          <p className="text-gray-900">5 stories</p>
+                        </div>
+                        <div>
+                          <label className="text-sm font-medium text-gray-500">Floor Area</label>
+                          <p className="text-gray-900">1,200 m² per floor</p>
+                        </div>
+                        <div>
+                          <label className="text-sm font-medium text-gray-500">Structural System</label>
+                          <p className="text-gray-900">Steel moment frame</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+
+                    <Card>
+                      <CardHeader>
+                        <CardTitle>Model Statistics</CardTitle>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <div>
+                          <label className="text-sm font-medium text-gray-500">Nodes</label>
+                          <p className="text-gray-900">156 nodes</p>
+                        </div>
+                        <div>
+                          <label className="text-sm font-medium text-gray-500">Beams</label>
+                          <p className="text-gray-900">85 beam elements</p>
+                        </div>
+                        <div>
+                          <label className="text-sm font-medium text-gray-500">Columns</label>
+                          <p className="text-gray-900">30 column elements</p>
+                        </div>
+                        <div>
+                          <label className="text-sm font-medium text-gray-500">Slabs</label>
+                          <p className="text-gray-900">5 floor slabs</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Modeling Tools</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <Button variant="outline" className="h-20 flex-col space-y-2">
+                          <Building2 className="w-6 h-6" />
+                          <span>Add Elements</span>
+                        </Button>
+                        <Button variant="outline" className="h-20 flex-col space-y-2">
+                          <Settings className="w-6 h-6" />
+                          <span>Properties</span>
+                        </Button>
+                        <Button variant="outline" className="h-20 flex-col space-y-2">
+                          <Calculator className="w-6 h-6" />
+                          <span>Loads</span>
+                        </Button>
+                        <Button variant="outline" className="h-20 flex-col space-y-2">
+                          <FileText className="w-6 h-6" />
+                          <span>Constraints</span>
                         </Button>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </div>
               </TabsContent>
 
               <TabsContent value="analysis">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Structural Analysis</CardTitle>
-                    <CardDescription>
-                      Configure and run structural analysis
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
+                <div className="space-y-6">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>5-Story Building Analysis</CardTitle>
+                      <CardDescription>
+                        Comprehensive structural analysis for your 5-story commercial building
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="p-4 border rounded-lg">
-                          <h4 className="font-medium mb-2">Linear Static Analysis</h4>
-                          <p className="text-sm text-gray-600 mb-3">Basic structural analysis under static loads</p>
-                          <Button size="sm">Configure</Button>
+                        <div className="p-4 border rounded-lg bg-green-50 border-green-200">
+                          <h4 className="font-medium mb-2 text-green-800">✅ Linear Static Analysis</h4>
+                          <p className="text-sm text-gray-600 mb-3">Dead, live, and wind loads analysis completed</p>
+                          <div className="flex space-x-2">
+                            <Button size="sm" className="bg-green-600 hover:bg-green-700">View Results</Button>
+                            <Button size="sm" variant="outline">Re-run</Button>
+                          </div>
                         </div>
-                        <div className="p-4 border rounded-lg">
-                          <h4 className="font-medium mb-2">Modal Analysis</h4>
-                          <p className="text-sm text-gray-600 mb-3">Natural frequencies and mode shapes</p>
-                          <Button size="sm" variant="outline">Configure</Button>
+                        <div className="p-4 border rounded-lg bg-blue-50 border-blue-200">
+                          <h4 className="font-medium mb-2 text-blue-800">🔄 Modal Analysis</h4>
+                          <p className="text-sm text-gray-600 mb-3">Natural frequencies: 1.2Hz, 3.8Hz, 7.1Hz</p>
+                          <div className="flex space-x-2">
+                            <Button size="sm" className="bg-blue-600 hover:bg-blue-700">View Modes</Button>
+                            <Button size="sm" variant="outline">Configure</Button>
+                          </div>
                         </div>
-                        <div className="p-4 border rounded-lg">
-                          <h4 className="font-medium mb-2">Response Spectrum</h4>
-                          <p className="text-sm text-gray-600 mb-3">Seismic response analysis</p>
-                          <Button size="sm" variant="outline">Configure</Button>
+                        <div className="p-4 border rounded-lg bg-orange-50 border-orange-200">
+                          <h4 className="font-medium mb-2 text-orange-800">⚡ Seismic Analysis</h4>
+                          <p className="text-sm text-gray-600 mb-3">Response spectrum per IBC 2021</p>
+                          <div className="flex space-x-2">
+                            <Button size="sm" className="bg-orange-600 hover:bg-orange-700">Run Analysis</Button>
+                            <Button size="sm" variant="outline">Configure</Button>
+                          </div>
                         </div>
-                        <div className="p-4 border rounded-lg">
-                          <h4 className="font-medium mb-2">P-Delta Analysis</h4>
-                          <p className="text-sm text-gray-600 mb-3">Second-order effects analysis</p>
-                          <Button size="sm" variant="outline">Configure</Button>
+                        <div className="p-4 border rounded-lg bg-purple-50 border-purple-200">
+                          <h4 className="font-medium mb-2 text-purple-800">📐 P-Delta Analysis</h4>
+                          <p className="text-sm text-gray-600 mb-3">Second-order effects for tall building</p>
+                          <div className="flex space-x-2">
+                            <Button size="sm" className="bg-purple-600 hover:bg-purple-700">Run Analysis</Button>
+                            <Button size="sm" variant="outline">Configure</Button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <Card>
+                      <CardHeader>
+                        <CardTitle>Analysis Results Summary</CardTitle>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <div>
+                          <label className="text-sm font-medium text-gray-500">Max Displacement</label>
+                          <p className="text-gray-900">12.3 mm (Story 5)</p>
+                        </div>
+                        <div>
+                          <label className="text-sm font-medium text-gray-500">Max Drift Ratio</label>
+                          <p className="text-gray-900">1/450 (within limits)</p>
+                        </div>
+                        <div>
+                          <label className="text-sm font-medium text-gray-500">Base Shear</label>
+                          <p className="text-gray-900">2,450 kN</p>
+                        </div>
+                        <div>
+                          <label className="text-sm font-medium text-gray-500">Fundamental Period</label>
+                          <p className="text-gray-900">0.85 seconds</p>
+                        </div>
+                      </CardContent>
+                    </Card>
+
+                    <Card>
+                      <CardHeader>
+                        <CardTitle>Load Combinations</CardTitle>
+                      </CardHeader>
+                      <CardContent className="space-y-3">
+                        <div className="flex justify-between items-center p-2 bg-gray-50 rounded">
+                          <span className="text-sm">1.4D</span>
+                          <Badge variant="secondary">Dead Load</Badge>
+                        </div>
+                        <div className="flex justify-between items-center p-2 bg-gray-50 rounded">
+                          <span className="text-sm">1.2D + 1.6L</span>
+                          <Badge variant="secondary">Live Load</Badge>
+                        </div>
+                        <div className="flex justify-between items-center p-2 bg-gray-50 rounded">
+                          <span className="text-sm">1.2D + 1.0L ± 1.0E</span>
+                          <Badge variant="secondary">Seismic</Badge>
+                        </div>
+                        <div className="flex justify-between items-center p-2 bg-gray-50 rounded">
+                          <span className="text-sm">1.2D + 1.0L ± 1.6W</span>
+                          <Badge variant="secondary">Wind</Badge>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </div>
               </TabsContent>
 
               <TabsContent value="design">
