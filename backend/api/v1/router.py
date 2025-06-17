@@ -4,8 +4,10 @@ Main API router for StruMind Backend v1
 
 from fastapi import APIRouter
 
-from .auth.router import router as auth_router
-from .projects.router import router as projects_router
+from .auth import router as auth_router
+from .users import router as users_router
+from .organizations import router as organizations_router
+from .projects import router as projects_router
 from .models.router import router as models_router
 from .analysis.router import router as analysis_router
 from .design.router import router as design_router
@@ -37,6 +39,18 @@ api_router.include_router(
     auth_router,
     prefix="/auth",
     tags=["Authentication"]
+)
+
+api_router.include_router(
+    users_router,
+    prefix="/users",
+    tags=["Users"]
+)
+
+api_router.include_router(
+    organizations_router,
+    prefix="/organizations",
+    tags=["Organizations"]
 )
 
 api_router.include_router(
